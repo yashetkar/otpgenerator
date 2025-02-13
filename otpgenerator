@@ -1,0 +1,24 @@
+import os
+import math
+import random
+import smtplib
+
+digits = "0123456789"
+OTP = ""
+for i in range (6):
+     OTP += digits[math.floor(random.random()*10)]
+     otp = OTP + "is your OTP"
+     message = otp
+   
+""" this link is for signing the google app password . please follow : https://support.google.com/accounts/answer/185833?hl=en """
+
+yash = smtplib.SMTP ('smtp.gmail.com', 587)
+yash.starttls()
+yash.login("yashetkar3399@gmail.com","ttxo deto fodj zxct")
+emailid = input("please enter your email: ")
+yash.sendmail('yashetkar68@gmail.com',emailid,message)
+a = input("enter your otp >>>: ")
+if a == OTP : 
+    print("otp enter successfully")
+else:
+    print("please enter valid otp ")
